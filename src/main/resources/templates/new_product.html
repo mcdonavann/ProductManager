@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create new Product</title>
+	<link  rel="stylesheet" th:href="@{/css/bootstrap.css}" type="text/css"/>
+</head>
+<body>
+
+<div class="card"  style="width: 20rem;margin: auto;border: 2px solid blue;padding: 10px">
+	<div class="card-body">
+		<h4 class="card-title">Create New Product</h4>
+
+		<p class="card-text"><form action="#" th:action="@{/save}" th:object="${product}" method="post">
+		<div class="form-group">
+			<label>Product Name :</label>
+			<input type="text" class="form-control" th:field="*{name}" />
+		</div>
+		<div class="form-group">
+			<label>Brand :</label>
+			<input type="text"  class="form-control" th:field="*{brand}" />
+		</div>
+		<div class="form-group">
+			<label>Made In :</label>
+			<input type="text" class="form-control"  th:field="*{madein}" />
+		</div>
+		<div class="form-group">
+			<label>Price :</label>
+			<input type="text"  class="form-control" th:field="*{price}" />
+		</div>
+		<button type="submit" class="btn btn-primary">Save</button>
+	</form></p>
+
+	</div>
+</div>
+
+</body>
+</html>
