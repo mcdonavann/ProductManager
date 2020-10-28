@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+<title>Product Manager</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.css}" type="text/css"/>
+
+</head>
+<body>
+
+<div class="container">
+	<h1 style="text-align: center;margin: 10px">Employee</h1>
+	<div  style="text-align: right;"><a th:href="@{/employee/new}" >Create New Employee</a></div>
+
+
+	<table class="table table-dark" >
+		<thead>
+		<tr>
+			<th scope="col">Employee ID</th>
+			<th scope="col">Name</th>
+			<th scope="col">Last</th>
+			<th scope="col">Nat Id</th>
+			<th scope="col">Actions</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="employee : ${employees}">
+			<td th:text="${employee.id}">Employee ID</td>
+			<td th:text="${employee.firstName}">Name</td>
+			<td th:text="${employee.lastName}">LastName</td>
+			<td th:text="${employee.natId}">NatId</td>
+
+			<td>
+				<a th:href="@{'/employee/edit/' + ${employee.id}}">Edit</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<a th:href="@{'/employee/delete/' + ${employee.id}}">Delete</a>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+</body>
+</html>
