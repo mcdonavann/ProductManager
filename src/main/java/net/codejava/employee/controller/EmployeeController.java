@@ -45,7 +45,7 @@ public class EmployeeController {
 		Employee employee = service.get(id);
 		model.addAttribute("employee", employee);
 		
-		return "/employee/edit";
+		return "employee/edit";
 	}
 	
 	@RequestMapping("/employee/delete/{id}")

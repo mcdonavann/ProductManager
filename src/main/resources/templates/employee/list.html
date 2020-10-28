@@ -25,12 +25,14 @@
 		</thead>
 		<tbody>
 		<tr th:each="employee : ${employees}">
+
 			<td th:text="${employee.id}">Employee ID</td>
 			<td th:text="${employee.firstName}">Name</td>
 			<td th:text="${employee.lastName}">LastName</td>
 			<td th:text="${employee.natId}">NatId</td>
 
 			<td>
+
 				<a th:href="@{'/employee/edit/' + ${employee.id}}">Edit</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<a th:href="@{'/employee/delete/' + ${employee.id}}">Delete</a>
